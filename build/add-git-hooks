@@ -1,0 +1,14 @@
+#!/bin/bash
+
+# sets default git_hooks
+mkdir git_hooks && mkdir git_hooks/pre-commit && mkdir git_hooks/pre-push
+cp contrib/pre-commit/lint git_hooks/pre-commit/
+cp contrib/pre-push/protect-master git_hooks/pre-push/
+cp contrib/pre-push/test git_hooks/pre-push/
+
+
+# add default hooks to ~./git_hooks
+cp -a git_hooks/. ~/.git_hooks
+
+# remove temp delete git_hooks folder
+rm -r git_hooks
