@@ -2,9 +2,11 @@
 
 function run_test
 {
-  npm test
-  if [ $? != '0' ]; then
-    exit 1
+  if [ -f package.json ]; then
+    npm test
+    if [ $? != '0' ]; then
+      exit 1
+    fi
   fi
 }
 
