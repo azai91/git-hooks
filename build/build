@@ -1,0 +1,5 @@
+#!/bin/bash
+
+# move executable to local bin
+cp git-hooks /usr/local/bin/
+
