@@ -2,11 +2,13 @@
 
 function run_test
 {
-# need to handle different languages   
-  npm run lint
-  if [ $? != '0' ]; then
-    exit 1
-  fi 
+  # todo need to handle different languages   
+  if [ -f .eslintrc ]; then
+    npm run lint
+    if [ $? != '0' ]; then
+      exit 1
+    fi 
+  fi
 }
 
 case "${1}" in 
